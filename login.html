@@ -1,0 +1,275 @@
+<html>
+
+<head>
+    <title>Website bán đồ chơi</title>
+    <link rel="stylesheet" type="text/css" href="bandc.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="bandc1.css">
+    <link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body style="font-family: cambria;">
+    <div id="header">
+        <div id="top-line">
+            <div class="wrapper">
+                <span id="hotline"><i class="fa-solid fa-phone"></i> Hotline: <b> 0336664012</b></span>
+                <span id="address"><b>Địa chỉ</b>: Số 1 Yên Tập, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+                <span id="ship"><b>FREE SHIP</b>: đơn hàng trên 500.000đ hoặc bán kính 5km</span>
+            </div>
+        </div>
+        <div id="banner" style="position:relative ;">
+            <div id="menu-mobi">
+                <div onclick="menumobi1()">
+                    <a href="#" style="color: #fff;"> <i class="fa-solid fa-bars"></i></a>
+                </div>
+                <div class="menumobi2">
+                    <ul>
+                        <li>Đồ chơi bé trai</li>
+                    </ul>
+                    <ul>
+                        <li>Đồ chơi bé gái</li>
+                    </ul>
+                    <ul>
+                        <li>Mẫu giáo và bé saow sinh</li>
+                    </ul>
+                    <ul>
+                        <li>Đồ dùng cho bé</li>
+                    </ul>
+                    <ul>
+                        <li>Sản phẩm TiNi</li>
+                    </ul>
+                    <ul>
+                        <li>Siêu Vé Thần Kì TiNi</li>
+                    </ul>
+                    <ul>
+                        <li>Kuyến mãi hot</li>
+                    </ul>
+                    <ul>
+                        <li>Hàng mới về</li>
+                    </ul>
+                    <div style="margin-top: 30px;margin-left: 40px;">
+                        <span style="color:#00bfff;">Bạn Cần Hỗ Trợ ?</span><br>
+                        <span id="hotline-mobi"><i class="fa-solid fa-phone" style="font-size: 25px;" >  <span style="font-family: arial;font-size: 16px;">  Hotline: <b> 0336664012</b></span></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                function menumobi1() {
+                    if (document.querySelector('.menumobi2').style.display === 'block') {
+                        document.querySelector('.menumobi2').style.display = 'none';
+                    } else {
+                        document.querySelector('.menumobi2').style.display = 'block'
+                    }
+                }
+            </script>
+            <div class="wrapper">
+                <i id="menu-small" class="fa-solid fa-bars" style="position: absolute;display: none;"></i>
+                <div id="logo">
+                    <a href="bandc.html"><img src="logo11.webp" alt="#"></a>
+                </div>
+                <div id="search">
+                    <form>
+                        <input style="border: none;" type="text" name="search" placeholder="Tìm kiếm sản phẩm...">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass" style="position:absolute;right: 10;top:40%;font-size: 20px;"></i></a>
+                    </form>
+                </div>
+                <div id="login">
+                    <span><a href="login1.html"><i style="padding: 10px;color: #fff;font-size: 30px;" class="fa-solid fa-user"></i></a><a href="login1.html"><b>Tài Khoản</b><br></a>
+                        <span><a href="login.html">Đăng nhập</a> / <a href="login1.html">Đăng ký</a></span>
+                    </span>
+                </div>
+                <div id="cart">
+                    <a href="cart.html"><i style="padding: 10px;color: #fff;display: none;position: absolute;" class="fa-solid fa-cart-shopping"></i></a>
+                    <span><a href="cart.html"><i style="padding: 10px;color: #fff;" class="fa-solid fa-cart-shopping"></i></a><a id="cart-amount" href="cart.html"> <span>Giỏ Hàng (0)</span></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:-20px ;">
+
+        <h4 style="margin-left: 20px"><span><a href="bandc.html" style="text-decoration: none;height: 40px;line-height: 40px;color: #1b3bc7;">
+            <i class="fa-solid fa-house-chimney"></i> Trang chủ > </a></span>
+            <a href="#" style="text-decoration:none;">Đăng nhập tài khoản </a>
+        </h4>
+
+    </div>
+    <div style="clear: both "></div>
+    <div id="between">
+        <h1 style="color: #0044ff;margin-left: 35%;">Đăng nhập</h1>
+        <p>Đăng nhập để mua hàng và sử dụng những tiện ích mới nhất từ TiNi STORE</p>
+        <span>Bạn chưa có tài khoản?  <a href="login1.html" style="color: #00bfff;"><b>ĐĂNG KÝ TÀI KHOẢN</b></a></span>
+        <div>
+            <div class="login-email">
+                <p><b style="color: #0044ff;">Điạ chỉ email *</b></p>
+                <form>
+                    <input id="login-tk" style="height: 40px;width: 600px;" type="text" placeholder="Nhập email...">
+                </form>
+            </div>
+            <div class="login-email">
+                <p><b style="color: #0044ff;">Mật khẩu *</b></p>
+                <form>
+                    <input id="login-mk" style="height: 40px;width: 600px;outline: none;padding-left: 15px;" type="password" placeholder="Nhập mật khẩu...">
+                </form>
+            </div>
+        </div>
+
+        <span>Quên mật khẩu? Khôi phục mật khẩu <a href="#" style="color: #00bfff;">tại đây</a></span>
+
+        <div id="login-button" style="margin-left: 200px">
+            <!-- <span style="margin-left: 32%"><a href="bandc.html" style="color:#fff; text-decoration: none;"><b> ĐĂNG NHẬP</b></a></span> -->
+            <button type="button" style="height:40px;width: 210px;background-color: red;border-radius:5px ;float: top;color:#fff;" onclick="login()">ĐĂNG NHẬP</button>
+        </div>
+
+
+    </div>
+    <script>
+        function validateInput() {
+            let formElement = document.querySelector(".form")
+            let inputElement = formElement.querySelectorAll(".form-input")
+            for (let i = 0; i < inputElement.length; i++) {
+                if (inputElement[i].value === "") {
+                    inputElement[i].parentElement.querySelector(".error-message").innerText = ` please enter your ${inputElement[i].id}`
+
+                } else {
+                    inputElement[i].parentElement.querySelector(".error-message").innerText = ""
+                }
+            }
+        }
+
+        function addNew() {
+            validateInput()
+            let formElement = document.querySelector(".form")
+            let errorElement = formElement.querySelectorAll(".error-message")
+            let arrErrorElement = []
+            for (let i = 0; i < errorElement.length; i++) {
+                arrErrorElement.push(errorElement[i].innerText)
+            }
+            let checkErrorElement = arrErrorElement.every(value => value === "")
+            if (checkErrorElement) {
+                let name = document.getElementById("name").value
+                let address = document.getElementById("address").value
+                let listStudent = localStorage.getItem("list-student") ? JSON.parse(localStorage.getItem("list-student")) : []
+                listStudent.push({
+                    name: name,
+                    address: address
+                })
+                localStorage.setItem("list-student", JSON.stringify(listStudent))
+                renderStudent()
+            }
+        }
+
+        function renderStudent() {
+            let listStudent = localStorage.getItem("list-student") ? JSON.parse(localStorage.getItem("list-student")) : []
+            let student = `<tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>`
+
+            listStudent.map((value, index) => {
+                student += `<tr>
+                    <td>${index + 1}</td>
+                    <td>${value.name}</td>
+                    <td>${value.address}</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>`
+            })
+            document.getElementById("tableContent").innerHTML = student
+        }
+    </script>
+    <script>
+        function login() {
+            if (document.getElementById('login-tk').value == 'admin' && document.getElementById('login-mk').value == '123')
+                window.location = '/admin/trangquantri.html'
+            else if (document.getElementById('login-tk').value == 'hoang' && document.getElementById('login-mk').value == '123')
+                window.location = 'bandc.html'
+            else {
+                alert('Tài khoản hoặc mặt khẩu không chính xác')
+            }
+        }
+    </script>
+    <div style="clear: both"></div>
+    <div class="cate-product">
+        <div class="cate-top" style="margin-left: 40px;">
+            <div class="cate-title title-left"><a name="listbook">Thương hiệu</a></div>
+        </div>
+        <div style="clear: both"></div>
+        <div id="trademark">
+            <div class="logo">
+                <img src="lego.png" alt="#">
+                <img src="playmobil.png" alt="#">
+                <img src="rubik.png" alt="">
+                <img src="playdoh.png" alt="#">
+                <img src="tosy.png" alt="#">
+                <img src="leapfrog.png" alt="#">
+                <img src="kskids.png" alt="#">
+                <img src="barbie.png" alt="#">
+                <img src="pony1.png" alt="#">
+            </div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div id="footer">
+        <div id="footer-left">
+            <h2>Địa chỉ</h2>
+            <span>268 Yên Tập, Nhân Hòa, Hưng Yên, Vietnam</span>
+            <h2>Liên hệ</h2>
+            <span><h3>HOTLINE chăm sóc khách hàng : </h3> 0336664012</span><br>
+            <span>Từ thứ Hai đến thứ Bảy (08:00 - 17:00)
+            <br> Chủ nhật (08:00 - 12:00)</span>
+            <br>
+            <span><h3>Email :</h3>hoanga5dqh@gmail.com</span>
+        </div>
+        <div id="footer-between">
+            <h2>Đều khoản và chính sách</h2>
+            <span><a href="#"><h4>- Chính sách giao hàng</h4></a></span>
+            <span><a href="#"><h4>- Chính sách tích lũy điểm</h4></a></span>
+            <span><a href="#"><h4>- Điều khoản và dịch vụ</h4></a></span>
+        </div>
+        <div id="footer-right">
+            <h2>Hỗ trợ khách hàng</h2>
+            <span><a href="#"><h4>- Chính sách bảo mật</h4></a></span>
+            <span><a href="#"><h4>- Chính sách đổi trả hàng hóa</h4></a></span>
+            <span><a href="#"><h4>- Chính sách thanh toán</h4></a></span>
+        </div>
+        <div id="footer-right-2">
+            <h3>Cảm ơn bạn đã luôn tin tưởng và đồng hành cùng TiNiStore</h3>
+            <img src="logo11.webp" alt="">
+        </div>
+        <div id="footer-map">
+            <h3 style="float:left;margin-right: 20px;">Vị trí shop:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7452.163789643958!2d106.05493062159786!3d20.94922611383093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a479723df9f7%3A0x8144812ad46d49dd!2zWcOqbiBU4bqtcCwgTmjDom4gSMOyYSwgTeG7uSBIw6BvLCBIxrBuZyBZw6puLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650813264013!5m2!1svi!2s"
+                width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="bottom-line">
+            <div>
+                <span><b>© Bản quyền thuộc về N.V.Hoàng | <a href="# " >Powered by HOANG</a></b></span>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="messenger">
+            <a href="#"><i  class="fa-brands fa-facebook-messenger"></i></a>
+        </div>
+        <div class="zalo">
+            <a href="#"><img src="zalo.png" alt=""></a>
+        </div>
+        <div class="mail">
+            <a href="#"><img src="mail.png" alt="#"></a>
+        </div>
+        <div class="map">
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<html>
+
+<head>
+    <title>Website bán đồ chơi</title>
+    <link rel="stylesheet" type="text/css" href="bandc.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="bandc1.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="bandc.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <meta charset="UTF-8">
+    <script>
+        $(document).ready(function() {
+            var cart = sessionStorage.getItem("cart");
+            cartProducts = "[" + cart + "]";
+            products = JSON.parse(cartProducts);
+            var amount = products.length;
+            $("#cart-amount").text("Giỏ hàng (" + amount + ")");
+            var table = `                
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>STT</th>
+                    <th>Ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiên</th>
+                    <th>Xóa</th>
+                </tr> `;
+            for (var i = 0; i < amount; i++) {
+                var row = ` 
+                <tr id="delete">
+                    <td id="stt">${i + 1}</td>
+                    <td><img src="${products[i].img}" alt=""></td>
+                    <td>${products[i].name}</td>
+                    <td>${products[i].price}</td>
+                    <td>
+                        <input class="btn-minus" type="button" value="-">
+                        <input class="txt-amount" type="text" value="1">
+                        <input class="btn-plus" type="button" value="+">
+                    </td>
+                    <td>${products[i].price}</td>
+                    <td><button type="button" onclick="alert('Xóa thành công')"><i class="fa-solid fa-trash-can"></i></button></td>
+                    
+                </tr>`;
+                // <td><i class="fa-solid fa-trash-can"></i></td>
+                table += row;
+            }
+            table += `</table>`;
+
+            $("#cart-products").html(table);
+
+            $(".btn-plus").click(function() {
+                // tăng số lượng phần tử
+                var amount = $(this).prev().attr("value");
+                var a = Number(amount) + 1;
+                $(this).prev().attr("value", a);
+                // lấy về giá tiền
+                var price = $(this).parent().prev().text();
+                price = price.replace("đ", "");
+                price = price.replace(".", "");
+                var p = Number(price);
+
+                //thành tiền
+                var total = a * p;
+
+                var total2 = "";
+
+                p1 = total / 1000;
+
+                if (total > 1000000) {
+                    var p1 = parseInt(total / 1000000);
+                    var p2 = (total - p1 * 1000000) / 1000;
+                    if (p2 >= 100)
+                        total2 = p1 + "." + p2 + ".000";
+                    else if (p2 > 0)
+                        total2 = p1 + "." + p2 + ".000";
+                    else
+                        total2 = p1 + ".000.000";
+                } else {
+                    p1 = total / 1000
+                    total2 = p1 + ".000";
+
+                }
+
+                //truy suất và gán ô thành tiền
+                $(this).parent().next().text(total + ".đ");
+                $(".price-provisional").text(total + ".đ")
+                $(".price-vouchers").text((total / 100) * 10 + ".đ")
+                $(".price").text(total - ((total / 100) * 10) + ".đ")
+
+            });
+            $(".btn-minus").click(function() {
+                // tăng số lượng phần tử
+                var amount = $(this).next().attr("value");
+                var a = 1
+                if (Number(amount) > 1)
+                    a = Number(amount) - 1;
+                $(this).next().attr("value", a);
+                // lấy về giá tiền
+                var price = $(this).parent().prev().text();
+                price = price.replace("đ", "");
+                price = price.replace(".", "");
+                var p = Number(price);
+
+                //thành tiền
+                var total = a * p;
+
+                var total2 = "";
+
+                p1 = total / 1000;
+
+                if (total > 1000000) {
+                    var p1 = parseInt(total / 1000000);
+                    var p2 = (total - p1 * 1000000) / 1000;
+                    if (p2 >= 100)
+                        total2 = p1 + "." + p2 + ".000.";
+                    else if (p2 > 0)
+                        total2 = p1 + "." + p2 + ".000.";
+                    else
+                        total2 = p1 + ".000.000.";
+                } else {
+                    p1 = total / 1000
+                    total2 = p1 + ".000";
+
+                }
+
+                //truy suất và gán ô thành tiền
+                $(this).parent().next().text(total + ".đ");
+                $(".price-provisional").text(total + ".đ")
+                $(".price-vouchers").text((total / 100) * 10 + ".đ")
+                $(".price").text(total - ((total / 100) * 10) + ".đ")
+
+            });
+            $("button").click(function() {
+                $("#delete").empty();
+
+            });
+
+            function button() {
+                localStorage.setItem('cart', null)
+                location.reload();
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="top-line">
+            <div class="wrapper">
+                <span id="hotline"><i class="fa-solid fa-phone"></i> Hotline: <b> 0336664012</b></span>
+                <span id="address"><b>Địa chỉ</b>: Số 1 Yên Tập, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+                <span id="ship"><b>FREE SHIP</b>: đơn hàng trên 500.000đ hoặc bán kính 5km</span>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="wrapper">
+                <div id="logo">
+                    <a href="bandc.html"><img src="logo11.webp" alt="#"></a>
+                </div>
+                <div id="search">
+                    <form>
+                        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm...">
+                    </form>
+                </div>
+                <div id="login">
+                    <span><i style="padding: 10px;color: #fff;font-size: 30px;" class="fa-solid fa-user"></i><a href="login1.html"><b>Tài Khoản</b><br></a>
+                        <span><a href="#">Đăng nhập</a> / <a href="#">Đăng ký</a></span>
+                    </span>
+                </div>
+                <div id="cart">
+                    <span><i style="padding: 10px;" class="fa-solid fa-cart-shopping"></i><a href="#"> Giỏ Hàng</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
+
+    <div id="content">
+
+        <h2><span><a href="bandc.html" style="text-decoration: none;height: 40px;line-height: 40px;color: #00bfff;"><i class="fa-solid fa-house-chimney"></i> Trang chủ ></a></span> Giỏ hàng</h2>
+        <div id="left-content">
+
+            <div id="cart-products"></div>
+        </div>
+        <div id="right-content">
+
+            <div id="delivery-to">
+                <h3>Giao hàng tới:</h3>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <br>
+                    <td>
+                        <input type="" maxlength="40" placeholder="Nhập địa chỉ" style="width: 250px;line-height:30px;font-size: 14px;outline: none;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <br>
+                <br>
+                <tr>
+                    <td>Số điên thoại:</td>
+                    <td>
+                        <input type="" maxlength="40" placeholder="Nhập số điện thoại" style="width: 250px;line-height:30px;font-size: 14px;outline: none;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+
+            </div>
+            <div id="coupon"><b>Thông tin khuyến mại</b><br><span style="font-size: 14px;color: red;">(Mã khuyến mãi chỉ được sử dụng một lần)</span><br>
+                <tr>
+                    <td>Mã khuyến mãi:</td>
+                    <td>
+                        <input type="" maxlength="40" placeholder="Giảm giá 10% mọi sản phẩm" style="width: 250px;line-height:30px;font-size: 14px;outline: none;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+            </div>
+            <div id="payment">
+                <p>
+                    <span>Tạm tính:</span> <span class="price-provisional"></span>
+                </p>
+                <p>
+                    <span> Giảm giá: </span> <span class="price-vouchers"></span>
+                </p>
+                <hr>
+
+                <p>
+                    <span>Tổng cộng:</span> <span class="price"></span>
+                </p>
+            </div>
+            <div id="process">
+                <input onclick="click1()" type="button" value="Thanh toán">
+            </div>
+        </div>
+    </div>
+    <script>
+        function click1() {
+            document.getElementById('pay-big').style.display = 'block'
+        }
+    </script>
+
+    <script>
+    </script>
+    <div id="pay-big">
+        <div id="pay">
+            <div onclick="close1()" style="position: absolute;right: 0px;width: 20px;height: 20px;text-align: center;background-color: red;color: #fff;">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+
+            <div style="width: 45%;height:90%;margin-top: 20px;margin-left: 20px;">
+                <img src="logo11.webp" alt="#" style="width: 170px;">
+                <h3 style="color: #00bfff;">Giao hàng tơi:</h3>
+                <h5>Địa chỉ:</h5>
+                <h5>Số điện thoại nhận hàng:</h5>
+                <h3 style="color: #00bfff;">Thanh toán:</h3>
+                <h5>Đơn giá:</h5><span class="dongia"></span>
+                <h5>Khuyến mãi:</h5>
+                <h5>Thành tiền:</h5>
+            </div>
+            <div style="width: 49%;height:90% ;margin-top: 20px;">
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        function close1() {
+            document.getElementById('pay-big').style.display = 'none'
+        }
+    </script>
+    <script>
+        $("#process").click(function() {
+            $(".dongia").text(total);
+        });
+    </script>
+
+
+    <div style="clear: both "></div>
+    <div id="trademark">
+        <div class="logo">
+            <img src="lego.png " alt="# ">
+            <img src="playmobil.png " alt="# ">
+            <img src="rubik.png " alt=" ">
+            <img src="playdoh.png " alt="# ">
+            <img src="tosy.png " alt="# ">
+            <img src="leapfrog.png " alt="# ">
+            <img src="kskids.png " alt="# ">
+            <img src="barbie.png " alt="# ">
+            <img src="pony1.png " alt="# ">
+        </div>
+    </div>
+    <div style="clear: both"></div>
+    <div id="footer">
+        <div id="footer-left">
+            <h2>Địa chỉ</h2>
+            <span>268 Yên Tập, Nhân Hòa, Hưng Yên, Vietnam</span>
+            <h2>Liên hệ</h2>
+            <span><h3>HOTLINE chăm sóc khách hàng : </h3> 0336664012</span><br>
+            <span>Từ thứ Hai đến thứ Bảy (08:00 - 17:00)
+            <br> Chủ nhật (08:00 - 12:00)</span>
+            <br>
+            <span><h3>Email :</h3>hoanga5dqh@gmail.com</span>
+        </div>
+        <div id="footer-between">
+            <h2>Đều khoản và chính sách</h2>
+            <span><a href="# "><h4>- Chính sách giao hàng</h4></a></span>
+            <span><a href="# "><h4>- Chính sách tích lũy điểm</h4></a></span>
+            <span><a href="# "><h4>- Điều khoản và dịch vụ</h4></a></span>
+        </div>
+        <div id="footer-right">
+            <h2>Hỗ trợ khách hàng</h2>
+            <span><a href="# "><h4>- Chính sách bảo mật</h4></a></span>
+            <span><a href="# "><h4>- Chính sách đổi trả hàng hóa</h4></a></span>
+            <span><a href="# "><h4>- Chính sách thanh toán</h4></a></span>
+        </div>
+        <div id="footer-right-2">
+            <h3>Cảm ơn bạn đã luôn tin tưởng và đồng hành cùng children's toy STORE</h3>lp
+            <img src="logo11.webp " alt=" ">
+        </div>
+        <div id="footer-map">
+            <h3 style="float:left;margin-right: 20px; ">Vị trí shop:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7452.163789643958!2d106.05493062159786!3d20.94922611383093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a479723df9f7%3A0x8144812ad46d49dd!2zWcOqbiBU4bqtcCwgTmjDom4gSMOyYSwgTeG7uSBIw6BvLCBIxrBuZyBZw6puLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650813264013!5m2!1svi!2s "
+                width="300 " height="150 " style="border:0; " allowfullscreen=" " loading="lazy " referrerpolicy="no-referrer-when-downgrade "></iframe>
+        </div>
+        <div id="bottom-line">
+            <div>
+                <span><b>© Bản quyền thuộc về N.V.Hoàng | <a href="# " >Powered by HOANG</a></b></span>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="messenger">
+            <a href="# "><i  class="fa-brands fa-facebook-messenger "></i></a>
+        </div>
+        <div class="zalo">
+            <a href="# "><img src="zalo.png " alt=" "></a>
+        </div>
+        <div class="mail">
+            <a href="#"><img src="mail.png " alt="# "></a>
+        </div>
+
+    </div>
+</body>
+
+</html>

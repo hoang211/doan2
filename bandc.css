@@ -1,0 +1,647 @@
+ body {
+     margin: 0;
+     font-family: arial;
+ }
+ 
+ #header {
+     min-height: 30px;
+     width: 100%;
+     /* margin: 10px 0px; */
+ }
+ 
+ #container {
+     min-height: 500px;
+     width: 100%;
+     margin-top: 20px;
+ }
+ 
+ #footer {
+     min-height: 60px;
+     width: 100%;
+     background-color: green;
+ }
+ 
+ * {
+     box-sizing: border-box;
+ }
+ 
+ [class*="col-"] {
+     float: left;
+     padding: 15px;
+     margin: 15px 0px;
+     min-height: 100px;
+     width: 50%;
+ }
+ 
+ .wrapper {
+     width: 100%;
+     min-height: 30px;
+     margin: 0 auto;
+ }
+ 
+ #top-line {
+     width: 100%;
+     background-color: #fff;
+     display: none;
+     min-height: 30px;
+     line-height: 30px;
+     color: #000;
+ }
+ 
+ #hotline {
+     margin-left: 10px;
+ }
+ 
+ #address {
+     margin-left: 100px;
+ }
+ 
+ #ship {
+     margin-left: 50px;
+ }
+ 
+ #banner {
+     width: 100%;
+     height: 150px;
+     background-color: #00bfff;
+     display: none;
+     position: relative;
+ }
+ 
+ #logo img {
+     height: 100px;
+     float: left;
+     margin-top: 25px;
+     width: 200px;
+ }
+ 
+ #search {
+     width: 30%;
+     height: 150px;
+     float: left;
+     margin-left: 50px;
+     display: block;
+     position: relative;
+ }
+ 
+ #search a:hover {
+     color: #00bfff;
+ }
+ 
+ input[type="text"] {
+     width: 100%;
+     box-sizing: border-box;
+     border: 2px solid black;
+     border-radius: 4px;
+     outline: none;
+     padding: 12px 14px;
+     /* transition: 0.6s ease-in-out; */
+     margin-top: 50px;
+ }
+ 
+ #login {
+     margin-left: 50px;
+     margin-top: 25px;
+     width: 15%;
+     height: 100px;
+     float: left;
+ }
+ 
+ #login a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ #login a:hover {
+     color: yellow;
+ }
+ 
+ #cart {
+     width: 12%;
+     height: 40px;
+     background-color: #ff3333;
+     float: left;
+     line-height: 40px;
+     margin-left: 50px;
+     margin-top: 50px;
+     border-radius: 5px;
+ }
+ 
+ #cart a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ #cart a:hover {
+     color: #00bfff;
+ }
+ 
+ #menu {
+     /* border: 2px solid black; */
+     width: 100%;
+     background-color: #80bb35;
+     min-height: 50px;
+     line-height: 50px;
+ }
+ 
+ #menu ul {
+     list-style: none;
+     margin: 0px;
+ }
+ 
+ .menu_allitem {
+     display: flex;
+     width: 100%;
+     height: 50px;
+ }
+ 
+ .menu_item:hover {
+     background-color: #00bfff;
+ }
+ 
+ #menu-left {
+     display: none;
+     height: 400px;
+     /* margin: 15px 0px; */
+     border: 2px solid #ddd;
+ }
+ 
+ #menu-left ul {
+     margin: 0px;
+     padding: 0px;
+     border: 1px solid #fff;
+     line-height: 45px;
+ }
+ 
+ #menu-left li {
+     padding-left: 30px;
+     height: 45px;
+     border-bottom: 1px solid #fff;
+ }
+ 
+ #menu-left a {
+     display: block;
+     line-height: 45px;
+     text-decoration: none;
+     color: #333;
+ }
+ 
+ #menu-left a:hover {
+     color: #fff;
+ }
+ 
+ #menu-left ul li img {
+     width: 40px;
+     float: left;
+     margin-right: 20px;
+     display: flex;
+ }
+ 
+ #menu a:hover {
+     color: yellow;
+ }
+ /*1*/
+ 
+ #menu-left ul ul {
+     z-index: 1;
+     width: 250px;
+     display: none;
+     position: absolute;
+     top: 240px;
+     background-color: #EEE;
+     margin-left: 308px;
+ }
+ 
+ #menu-left ul ul li {
+     line-height: 40px;
+     background-color: #00bfff;
+     width: 100%;
+ }
+ 
+ #menu-left ul li:hover ul {
+     display: block;
+ }
+ 
+ #menu-left li li a {
+     color: #fff;
+ }
+ 
+ #menu-left li li a:hover {
+     color: #333;
+ }
+ 
+ #menu-left li li:hover {
+     background-color: #fff;
+ }
+ 
+ #slideshow {
+     z-index: -1;
+     width: 70%;
+     height: 400px;
+     background-color: #ccc;
+     /* margin: 15px 0px; */
+ }
+ 
+ #slideshow img {
+     width: 800px;
+     height: 400px;
+     position: absolute;
+ }
+ 
+ #button {
+     width: 800px;
+     height: 50px;
+     position: absolute;
+     margin-left: 28%;
+     margin-top: 15%;
+ }
+ 
+ #button1 img {
+     width: 50px;
+     height: 50px;
+     border-radius: 25px;
+     float: left;
+ }
+ 
+ #button2 img {
+     width: 50px;
+     height: 50px;
+     border-radius: 25px;
+     margin-left: 87%
+ }
+ 
+ .cate-title {
+     height: 36px;
+     line-height: 36px;
+     background-color: #00bfff;
+     border-radius: 3px;
+     color: #fff;
+     font-weight: bold;
+     padding-left: 20px;
+     width: 340px;
+ }
+ 
+ .panel {
+     display: none;
+     width: 100%;
+     height: 220px;
+     margin: 25px 0px;
+     clear: both;
+ }
+ 
+ .panel img {
+     width: 22%;
+     float: left;
+     margin-left: 30px;
+ }
+ 
+ .cate-product {
+     min-height: 300px;
+     margin-top: 15px;
+     float: left;
+     width: 100%;
+ }
+ 
+ .cate-item {
+     float: right;
+     min-width: 200px;
+     height: 36px;
+     background-color: #ccc;
+ }
+ 
+ .title-left {
+     float: left
+ }
+ 
+ .product {
+     height: 350px;
+     border-radius: 18px;
+     text-align: center;
+ }
+ 
+ .product img {
+     width: 100%;
+     height: 200px;
+     border-radius: 10px;
+ }
+ 
+ .product a {
+     font-size: 14px;
+     text-decoration: none;
+     color: #333;
+     /* font-weight: bold; */
+     display: block;
+     line-height: 40px;
+     margin-right: 5px;
+ }
+ 
+ .product a:hover {
+     color: #00bfff;
+ }
+ 
+ .product div {
+     border: 1px solid #ddd;
+     /* border-radius: 10px; */
+     width: 100%;
+     height: 330px;
+     box-sizing: border-box;
+     box-shadow: 0 1px 3px rgb(0 0 0 / 50%);
+ }
+ 
+ #trademark {
+     width: 100%;
+     height: 200px;
+ }
+ 
+ #trademark img {
+     height: 100px;
+     width: 10%;
+     border: 2px solid #000;
+     margin-right: 8px;
+     border-radius: 10px;
+ }
+ 
+ .logo {
+     margin-top: 50px;
+     width: 95%;
+     height: 150px;
+     margin-left: 3.5%;
+     padding: 20px;
+     display: flex;
+ }
+ 
+ #footer {
+     width: 100%;
+     height: 500px;
+     background-color: #00bfff;
+     border: 2px solid #ccc;
+     color: #fff;
+ }
+ 
+ #footer-left {
+     width: 25%;
+     margin-left: 40px;
+     float: left;
+ }
+ 
+ #footer-between {
+     width: 22%;
+     margin-left: 40px;
+     float: left;
+ }
+ 
+ #footer-between a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ #footer-between a:hover {
+     color: blue;
+ }
+ 
+ #footer-right {
+     width: 22%;
+     margin-left: 40px;
+     float: left;
+ }
+ 
+ #footer-right-2 {
+     width: 16%;
+     margin-left: 40px;
+     float: left;
+ }
+ 
+ #footer-map {
+     width: 450px;
+     height: 200px;
+     margin-top: 230px;
+     margin-left: 31.5%;
+ }
+ 
+ #footer-right-2 img {
+     width: 100%;
+ }
+ 
+ #footer-right a {
+     text-decoration: none;
+     color: #fff;
+ }
+ 
+ #footer-right a:hover {
+     color: blue;
+ }
+ 
+ #bottom-line {
+     margin-top: 15px;
+     height: 50px;
+     background-color: #f08b18;
+     line-height: 50px;
+ }
+ 
+ #between {
+     margin-left: 25%;
+     width: 50%;
+     height: 500px;
+ }
+ 
+ #between p {
+     font-size: 18px;
+ }
+ 
+ #between a {
+     color: #000;
+ }
+ 
+ #between a:hover {
+     color: #80bb35;
+ }
+ 
+ #between input[type="text"] {
+     width: 100%;
+     box-sizing: border-box;
+     border: 1px solid black;
+     border-radius: 4px;
+     outline: none;
+     padding: 20px 18px;
+     transition: 0.6s ease-in-out;
+     margin: 0px;
+ }
+ 
+ .login-email {
+     margin-top: 5%;
+ }
+ 
+ #login-button {
+     margin-top: 15px;
+     background-color: #ff3333;
+     border-radius: 10px;
+     margin-left: 25%;
+     width: 210px;
+     height: 40px;
+     line-height: 40px;
+ }
+ 
+ #contact {
+     width: 50px;
+     height: 250px;
+     position: fixed;
+     bottom: 20px;
+     right: 10px;
+     border-radius: 6%;
+ }
+ 
+ .messenger {
+     border-radius: 50%;
+     background-color: #fff;
+     margin-bottom: 10px;
+     border: 1px solid #ddd;
+     color: #00bfff;
+     font-size: 50px;
+ }
+ 
+ .zalo img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     padding-bottom: 2px;
+     border: 1px solid #ddd;
+     background-color: #fff;
+     margin-bottom: 10px;
+ }
+ 
+ .mail img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     padding-bottom: 2px;
+     border: 1px solid #ddd;
+     background-color: #fff;
+ }
+ 
+ .sale-price {
+     color: #00bfff;
+     font-weight: bold;
+     font-size: 20px;
+     display: block;
+ }
+ 
+ .old-price {
+     color: #ddd;
+     font-weight: bold;
+     display: block;
+ }
+ 
+ .last-product {
+     margin-right: 0px;
+ }
+ 
+ .bnt-addToCart {
+     display: block;
+     border: none;
+     background-color: #00bfff;
+     color: #fff;
+     line-height: 30px;
+     width: 100px;
+     float: left;
+     /* margin-left: 15px; */
+     text-transform: uppercase;
+     cursor: pointer;
+     border-radius: 5px;
+     margin-top: 10px;
+     text-align: center;
+     position: absolute;
+     display: none;
+     bottom: 150px;
+     left: 75px;
+ }
+ 
+ .btn-details {
+     /* display: block; */
+     border: none;
+     line-height: 30px;
+     float: left;
+     width: 100px;
+     /* margin-left: 20px; */
+     text-transform: uppercase;
+     cursor: pointer;
+     margin-top: 10px;
+     border-radius: 5px;
+     position: absolute;
+     bottom: 200px;
+     left: 75px;
+     display: none;
+ }
+ /* .btn-details {
+     display: none;
+     border: none;
+     cursor: pointer;
+     right: 30%;
+     position: absolute;
+     font-size: 10px;
+     bottom: 45%;
+     border-radius: 20px;
+ } */
+ 
+ .p-items:hover .btn-details {
+     display: block;
+     background-color: red;
+     color: #fff;
+ }
+ 
+ .p-items:hover .bnt-addToCart {
+     display: block;
+     background-color: #00bfff;
+     color: #fff;
+ }
+ 
+ .p-items {
+     position: relative;
+ }
+ 
+ .p-sale {
+     position: absolute;
+     width: 70px;
+     height: 40px;
+     line-height: 40px;
+     color: #fff;
+     background-color: orange;
+     border-radius: 0 50px 50px 0;
+     text-align: center;
+     z-index: 100;
+ }
+ 
+ .p-sale-1 {
+     position: absolute;
+     width: 40px;
+     height: 40px;
+     line-height: 40px;
+     color: #fff;
+     background-color: red;
+     border-radius: 0 0 30px 30px;
+     text-align: center;
+     z-index: 100;
+ }
+ 
+ .p-img:hover>.p-img-1 {
+     opacity: 1;
+ }
+ /* .p-img {
+     position: relative;
+ } */
+ 
+ .p-img-1 {
+     opacity: 0;
+     position: absolute;
+     left: 0;
+     top: 0;
+     bottom: 0;
+     right: 0;
+ }
+ 
+ .p-img-1:hover {
+     opacity: 1;
+ }
+ 
+ #menu-mobi {
+     display: none;
+ }

@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <title>Website bán đồ chơi</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bandc.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="bandc1.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bandc.js"></script>
+</head>
+
+<body style="font-family: cambria;">
+    <div id="header">
+        <div id="top-line">
+            <div class="wrapper">
+                <span id="hotline"><i class="fa-solid fa-phone"></i> Hotline: <b> 0336664012</b></span>
+                <span id="address"><b>Địa chỉ</b>: Số 1 Yên Tập, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+                <span id="ship"><b>FREE SHIP</b>: đơn hàng trên 500.000đ hoặc bán kính 5km</span>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="wrapper">
+                <div id="logo">
+                    <a href="bandc.html"><img src="logo11.webp" alt="#"></a>
+                </div>
+                <div id="search">
+                    <form>
+                        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm...">
+                    </form>
+                </div>
+                <div id="login">
+                    <span><i style="padding: 10px;color: #fff;font-size: 30px;" class="fa-solid fa-user"></i><a href="login1.html"><b>Tài Khoản</b><br></a>
+                        <span><a href="login.html">Đăng nhập</a> / <a href="login1.html">Đăng ký</a></span>
+                    </span>
+                </div>
+                <div id="cart">
+                    <span><i style="padding: 10px;" class="fa-solid fa-cart-shopping"></i><a href="#"> Giỏ Hàng</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:-15px">
+
+        <h3 style="margin-left: 20px"><span><a href="bandc.html" style="text-decoration: none;height: 40px;line-height: 40px;color: #1d0dd2;">
+            <i class="fa-solid fa-house-chimney"></i> Trang chủ > </a></span>
+            <a href="#" style="text-decoration:none;">Đăng ký tài khoản </a>
+        </h3>
+
+    </div>
+    <div style="clear: both "></div>
+    <div style="width:100%;height:600px;">
+        <h1 style="margin-left: 40%;color: #0044ff;">Tạo tài khoản</h1>
+
+        <form action="#" method="post">
+            <table style="margin-left: 27%; margin-bottom: 20px;">
+                <tr>
+                    <td>Họ và tên :</td>
+                    <td>
+                        <input type="" maxlength="50" placeholder="Nhập họ tên" style="width: 400px;line-height:30px;font-size: 14px;" required />
+                        <a href="#"></a>
+
+                    </td>
+                    <script>
+                        function maxlength(i) {
+                            var max_lengt = 50;
+                            if (i.value.length > max_lengt) {
+                                i.value = i.value.substr(0, max_lengt);
+                            }
+                            document.getElementById('char_cnt').innerHTML = i.value.length;
+                            document.getElementById('chars_left').innerHTML = max_lengt - el.value.length;
+                            return true;
+                        }
+                    </script>
+                </tr>
+                <tr>
+                    <td>Giới tính :</td>
+                    <td>
+                        <input id="rdoMale" type="radio" placeholder="nhập giới tính" name="gender" checked />
+                        <!--để cùng tên vd như là gender thì chọn chỉ chọn nam hoạc nữ-->
+                        <label for="rdoMale">Nam</label>
+                        <!--kích vào chữ nam hoặc nữ nó cũng chọn-->
+                        <input id="rodFemale" type="radio" name="gender" />
+                        <label for="rdoFemale">Nữ</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh :</td>
+                    <td>
+                        <input type="date" placeholder="nhập ngày sinh" style="width: 400px;line-height:30px;font-size: 14px;" required/>
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td>
+                        <input type="" maxlength="40" placeholder="Nhập quê quán" style="width: 400px;line-height:30px;font-size: 14px;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td>
+                        <input type="tel" placeholder="0123123123" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" style="width: 400px;line-height:30px;font-size: 14px;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="email" placeholder="Nhập Email" style="width: 400px;line-height:30px;font-size: 14px;" required/>
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                        <input type="" placeholder="Nhập mật khẩu" style="width: 400px;line-height:30px;font-size: 14px;" required/>
+                        <a href="#"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mã xác nhận:</td>
+                    <td>
+                        <input type="" placeholder="Nhập mã xác nhận" style="width: 150px;line-height:30px;font-size: 14px;" required />
+                        <a href="#"></a>
+                    </td>
+                </tr>
+            </table>
+            <div class="btn-box">
+                <button onclick="" type="submit" style="width:150px;height: 50px;border-radius: 8px;position: relative;margin-left:45%;background-color: red;color: #fff;"><a href="login.html" style="color: #fff">ĐĂNG KÝ</a></button>
+
+            </div>
+
+        </form>
+        <a href="login.html" style="margin-left: 44%;color: #00bfff;">Quay lại trang đăng nhập</a>
+
+
+    </div>
+
+    <div style="clear: both "></div>
+    <div id="trademark">
+        <div class="logo">
+            <img src="lego.png " alt="# ">
+            <img src="playmobil.png " alt="# ">
+            <img src="rubik.png " alt=" ">
+            <img src="playdoh.png " alt="# ">
+            <img src="tosy.png " alt="# ">
+            <img src="leapfrog.png " alt="# ">
+            <img src="kskids.png " alt="# ">
+            <img src="barbie.png " alt="# ">
+            <img src="pony1.png " alt="# ">
+        </div>
+    </div>
+    <div style="clear: both "></div>
+    <div id="footer">
+        <div id="footer-left">
+            <h2>Địa chỉ</h2>
+            <span>268 Yên Tập, Nhân Hòa, Hưng Yên, Vietnam</span>
+            <h2>Liên hệ</h2>
+            <span><h3>HOTLINE chăm sóc khách hàng : </h3> 0336664012</span><br>
+            <span>Từ thứ Hai đến thứ Bảy (08:00 - 17:00)
+            <br> Chủ nhật (08:00 - 12:00)</span>
+            <br>
+            <span><h3>Email :</h3>hoanga5dqh@gmail.com</span>
+        </div>
+        <div id="footer-between">
+            <h2>Đều khoản và chính sách</h2>
+            <span><a href="# "><h4>- Chính sách giao hàng</h4></a></span>
+            <span><a href="# "><h4>- Chính sách tích lũy điểm</h4></a></span>
+            <span><a href="# "><h4>- Điều khoản và dịch vụ</h4></a></span>
+        </div>
+        <div id="footer-right">
+            <h2>Hỗ trợ khách hàng</h2>
+            <span><a href="# "><h4>- Chính sách bảo mật</h4></a></span>
+            <span><a href="# "><h4>- Chính sách đổi trả hàng hóa</h4></a></span>
+            <span><a href="# "><h4>- Chính sách thanh toán</h4></a></span>
+        </div>
+        <div id="footer-right-2">
+            <h3>Cảm ơn bạn đã luôn tin tưởng và đồng hành cùng children's toy STORE</h3>
+            <img src="logo.png#" alt=" ">
+        </div>
+        <div id="footer-map">
+            <h3 style="float:left;margin-right: 20px; ">Vị trí shop:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7452.163789643958!2d106.05493062159786!3d20.94922611383093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a479723df9f7%3A0x8144812ad46d49dd!2zWcOqbiBU4bqtcCwgTmjDom4gSMOyYSwgTeG7uSBIw6BvLCBIxrBuZyBZw6puLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650813264013!5m2!1svi!2s "
+                width="300 " height="150 " style="border:0; " allowfullscreen=" " loading="lazy " referrerpolicy="no-referrer-when-downgrade "></iframe>
+        </div>
+        <div id="bottom-line">
+            <div>
+                <span><b>© Bản quyền thuộc về N.V.Hoàng | <a href="# " >Powered by HOANG</a></b></span>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="messenger">
+            <a href="# "><i  class="fa-brands fa-facebook-messenger "></i></a>
+        </div>
+        <div class="zalo">
+            <a href="# "><img src="zalo.png " alt=" "></a>
+        </div>
+        <div class="mail">
+            <a href="# "><img src="mail.png " alt="# "></a>
+        </div>
+
+    </div>
+</body>
+
+</html>

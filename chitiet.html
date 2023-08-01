@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <title>Website bán đồ chơi</title>
+    <link rel="stylesheet" type="text/css" href="bandc.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="bandc.html">
+    <link rel="stylesheet" href="bandc1.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="bandc.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <script>
+        $(document).ready(function() {
+
+            $(".bnt-addToCart").click(function() {
+                var cartAmount = Number(sessionStorage.getItem("cartAmount"));
+                //alert(cartAmount);
+                if (cartAmount != null)
+                    cartAmount += 1;
+                else
+                    cartAmount = 1;
+
+                $("#cart-amount").text("Giỏ hàng (" + cartAmount + ")");
+                sessionStorage.setItem("cartAmount", cartAmount)
+
+                var pImg = $(this).parent().parent().find(".p-img").attr("src");
+                var pName = $(this).parent().parent().find(".p-name").text();
+                var pPrice = $(this).parent().parent().find(".sale-price").text();
+                var product = {
+                    "img": pImg,
+                    "name": pName,
+                    "price": pPrice
+                };
+
+                //alert(pImg + " " + pName + " " + pPrice);
+                var cart = sessionStorage.getItem("cart");
+                var cartProduct = "";
+                if (cart != null) {
+                    cartProduct = cart + "," + JSON.stringify(product);
+                } else
+                    cartProduct = JSON.stringify(product);
+                sessionStorage.setItem("cart", cartProduct);
+                //alert(cartProduct);
+            })
+
+        })
+    </script>
+</head>
+
+<body style="font-family: cambria;">
+    <div id="header">
+        <div id="top-line">
+            <div class="wrapper">
+                <span id="hotline"><i class="fa-solid fa-phone"></i> Hotline: <b> 0336664012</b></span>
+                <span id="address"><b>Địa chỉ</b>: Số 1 Yên Tập, Nhân Hòa, Mỹ Hào, Hưng Yên</span>
+                <span id="ship"><b>FREE SHIP</b>: đơn hàng trên 500.000đ hoặc bán kính 5km</span>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="wrapper">
+                <div id="logo">
+                    <a href="bandc.html"><img src="logo11.webp" alt="#"></a>
+                </div>
+                <div id="search">
+                    <form>
+                        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm...">
+                    </form>
+                </div>
+                <div id="login">
+                    <span><i style="padding: 10px;color: #fff;font-size: 30px;" class="fa-solid fa-user"></i><a href="login1.html"><b>Tài Khoản</b><br></a>
+                        <span><a href="bandc.html">Đăng nhập</a> / <a href="#">Đăng ký</a></span>
+                    </span>
+                </div>
+                <div id="cart">
+                    <span><i style="padding: 10px;" class="fa-solid fa-cart-shopping"></i><a href="#"> Giỏ Hàng</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div style=" border-radius: 5px;background-color: aqua;">
+            <h3 style="margin-left: 20px"><span><a href="bandc.html" style="text-decoration: none;height: 40px;line-height: 40px;color: #2a738b;">
+            <i class="fa-solid fa-house-chimney"></i> Trang chủ > </a></span>
+                <a href="#" style="text-decoration:none;">Đồ chơi lắp ráp > </a>
+                <a href="#" style="text-decoration:none;">Đồ chơi lắp ráp 759 mảnh MAX Builder More</a></h3>
+        </div>
+
+
+        <div id="detail">
+            <div id="detail-slideshow">
+                <img id="detail-slider" style="width:400px;margin-left:150px ;margin-bottom: 50px;" src="6.webp" alt="">
+            </div>
+            <div id="detail-picture">
+                <img src="6.webp" alt="#" onclick="anh1()">
+                <img src="7.webp" alt="#" onclick="anh2()">
+                <img src="8.webp" alt="#" onclick="anh3()">
+                <img src="9.webp" alt="#" onclick="anh4()">
+                <img src="10.webp" alt="#" onclick="anh5()">
+                <img src="11.webp" alt="#" onclick="anh6()">
+            </div>
+            <script src="chitiet.js"></script>
+            <div id="detail-right">
+                <span style="font-size: 23px;font-family: Cambria;color: #000;">Đồ chơi lắp ráp 759 mảnh MAX Builder More</span>
+                <p style="color: #00bfff;font-size: 24px;font-family: Cochin;">780.000đ</p>
+                <p style="font-size:20px;">Thương hiệu : <b style="color: #00bfff;">MAX BUILD MORE </b> </p>
+                <p style="font-size:20px;">Mã sản phẩm : <b style="color: #00bfff;">0211 </b> </p>
+                <div style="width:80%;border: 2px solid #00bfff;border-radius: 5px;text-align: center;">
+                    <p style="font-size: 22px;">
+                        Max Build More: là thương hiệu đồ chơi lắp ráp nổi tiếng của Zuru đến từ New Zealand. Với khối lắp ráp được thiết kế chuẩn chất lượng châu Âu và dễ dàng chơi, nổi bật với những bộ sưu...
+                    </p>
+                </div>
+                <div class="p-items">
+                    <input class="bnt-addToCart" type="button" value="Chọn mua" onclick="alert('Thêm vào giỏ hàng thành công')">
+                </div>
+
+            </div>
+            <div>
+                <div style=" width:200px;height:50px;border: 2px solid #00bfff;text-align: center;line-height: 50px;border-radius: 5px;margin-left: 60px; ">
+                    <span style="font-size: 22px;color: #00bfff; "><b>Mô tả sản phẩm</b></span>
+                </div>
+                <hr width="90% " size="3px " color="#00bfff ">
+                <p style="margin-left: 60px ">Max Build More: là thương hiệu đồ chơi lắp ráp nổi tiếng của Zuru đến từ New Zealand. Với khối lắp ráp được thiết kế chuẩn chất lượng châu Âu và dễ dàng <br> chơi, nổi bật với những bộ sưu tập nhân vật đặc trưng. Max Build More sẽ là bộ
+                    đồ chơi lắp ráp mà các bé trai sẽ yêu thích.</p>
+                <p style="margin-left: 60px "><b>1.Thông tin sản phẩm :</b> Đồ chơi lắp ráp bao gồm: 753 khối gạch (nhiều màu sắc), 1 sách hướng dẫn ý tưởng lắp ráp, 2 miếng đế lắp ráp và 1 hộp đựng.</p>
+                <p style="margin-left: 60px "><b>2.Đặc tính sản phẩm :</b></p>
+                <p style="margin-left: 60px ">- Giúp bé phát triển tư duy, sáng tạo khi chơi cùng.</p>
+                <p style="margin-left: 60px ">- Sản phẩm có thể chơi cùng bất kì sản phẩm lắp ráp khác như Lego.</p>
+                <p style="margin-left: 60px "><b>3.Kích thước :</b>38.5 x 18.6 x 11.5 (cm)</p>
+                <p style="margin-left: 60px "><b>4.Độ tuổi :</b> 5 tuổi trở lên</p>
+                <p style="margin-left: 60px "><b>5.Chất liệu :</b> nhựa ABS cao cấp</p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <div style="clear: both "></div>
+    <div id="trademark">
+        <div class="logo">
+            <img src="lego.png " alt="# ">
+            <img src="playmobil.png " alt="# ">
+            <img src="rubik.png " alt=" ">
+            <img src="playdoh.png " alt="# ">
+            <img src="tosy.png " alt="# ">
+            <img src="leapfrog.png " alt="# ">
+            <img src="kskids.png " alt="# ">
+            <img src="barbie.png " alt="# ">
+            <img src="pony1.png " alt="# ">
+        </div>
+    </div>
+    <div style="clear: both "></div>
+    <div id="footer">
+        <div id="footer-left">
+            <h2>Địa chỉ</h2>
+            <span>268 Yên Tập, Nhân Hòa, Hưng Yên, Vietnam</span>
+            <h2>Liên hệ</h2>
+            <span><h3>HOTLINE chăm sóc khách hàng : </h3> 0336664012</span><br>
+            <span>Từ thứ Hai đến thứ Bảy (08:00 - 17:00)
+            <br> Chủ nhật (08:00 - 12:00)</span>
+            <br>
+            <span><h3>Email :</h3>hoanga5dqh@gmail.com</span>
+        </div>
+        <div id="footer-between">
+            <h2>Đều khoản và chính sách</h2>
+            <span><a href="# "><h4>- Chính sách giao hàng</h4></a></span>
+            <span><a href="# "><h4>- Chính sách tích lũy điểm</h4></a></span>
+            <span><a href="# "><h4>- Điều khoản và dịch vụ</h4></a></span>
+        </div>
+        <div id="footer-right">
+            <h2>Hỗ trợ khách hàng</h2>
+            <span><a href="# "><h4>- Chính sách bảo mật</h4></a></span>
+            <span><a href="# "><h4>- Chính sách đổi trả hàng hóa</h4></a></span>
+            <span><a href="# "><h4>- Chính sách thanh toán</h4></a></span>
+        </div>
+        <div id="footer-right-2">
+            <h3>Cảm ơn bạn đã luôn tin tưởng và đồng hành cùng children's toy STORE</h3>
+            <img src="logo11.webp" alt=" ">
+        </div>
+        <div id="footer-map">
+            <h3 style="float:left;margin-right: 20px; ">Vị trí shop:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7452.163789643958!2d106.05493062159786!3d20.94922611383093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a479723df9f7%3A0x8144812ad46d49dd!2zWcOqbiBU4bqtcCwgTmjDom4gSMOyYSwgTeG7uSBIw6BvLCBIxrBuZyBZw6puLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1650813264013!5m2!1svi!2s "
+                width="300 " height="150 " style="border:0; " allowfullscreen=" " loading="lazy " referrerpolicy="no-referrer-when-downgrade "></iframe>
+        </div>
+        <div id="bottom-line">
+            <div>
+                <span><b>© Bản quyền thuộc về N.V.Hoàng | <a href="# " >Powered by HOANG</a></b></span>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="messenger">
+            <a href="# "><i  class="fa-brands fa-facebook-messenger "></i></a>
+        </div>
+        <div class="zalo">
+            <a href="# "><img src="zalo.png " alt=" "></a>
+        </div>
+        <div class="mail">
+            <a href="# "><img src="mail.png " alt="# "></a>
+        </div>
+
+    </div>
+</body>
+
+</html>
